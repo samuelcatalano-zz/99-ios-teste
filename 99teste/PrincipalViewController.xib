@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Exo2-SemiBold.ttf">
+            <string>Exo2-SemiBold</string>
+            <string>Exo2-SemiBold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrincipalViewController">
+            <connections>
+                <outlet property="btnRequestDriver" destination="5fO-aX-XA5" id="xfo-0e-pTN"/>
+                <outlet property="btnShowCurrentLocation" destination="sdb-nD-2uy" id="EgE-69-Qkf"/>
+                <outlet property="mapView" destination="FDY-Uh-h3g" id="IGg-iC-z0b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDY-Uh-h3g">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Jkt-FY-yvt"/>
+                    </connections>
+                </mapView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzO-NR-aeo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdb-nD-2uy">
+                            <rect key="frame" x="335" y="26" width="32" height="32"/>
+                            <state key="normal" title="Button" image="current_location_icon.png"/>
+                            <connections>
+                                <action selector="btnShowCurrentLocationClicked:" destination="-1" eventType="touchUpInside" id="Mu5-ws-O6e"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99Teste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSK-rB-rYH">
+                            <rect key="frame" x="72" y="31" width="230" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="ZIi-nm-CMi"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.87505212970000001" blue="0.034291263689999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="jSK-rB-rYH" firstAttribute="leading" secondItem="nzO-NR-aeo" secondAttribute="leading" constant="72" id="AAy-V4-byL"/>
+                        <constraint firstItem="sdb-nD-2uy" firstAttribute="top" secondItem="nzO-NR-aeo" secondAttribute="top" constant="26" id="Nag-af-P4n"/>
+                        <constraint firstAttribute="bottom" secondItem="sdb-nD-2uy" secondAttribute="bottom" constant="8" id="P1c-Zd-aPa"/>
+                        <constraint firstItem="sdb-nD-2uy" firstAttribute="leading" secondItem="jSK-rB-rYH" secondAttribute="trailing" constant="33" id="R2j-f6-fBv"/>
+                        <constraint firstItem="jSK-rB-rYH" firstAttribute="centerY" secondItem="sdb-nD-2uy" secondAttribute="centerY" id="ikt-QG-Qhb"/>
+                        <constraint firstItem="jSK-rB-rYH" firstAttribute="top" secondItem="nzO-NR-aeo" secondAttribute="top" constant="31" id="tSP-8N-HKk"/>
+                        <constraint firstAttribute="trailing" secondItem="sdb-nD-2uy" secondAttribute="trailing" constant="8" id="uRo-M5-gMv"/>
+                        <constraint firstItem="jSK-rB-rYH" firstAttribute="centerX" secondItem="nzO-NR-aeo" secondAttribute="centerX" id="y3z-tK-kZH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VJ-Oh-Mvt">
+                    <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fO-aX-XA5">
+                            <rect key="frame" x="8" y="9" width="359" height="28"/>
+                            <color key="backgroundColor" red="1" green="0.87505212970000001" blue="0.034291263689999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="13"/>
+                            <state key="normal" title="REQUEST DRIVER">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnRequestDriverClicked:" destination="-1" eventType="touchUpInside" id="uvx-9K-Jyq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.87505212970000001" blue="0.034291263689999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5fO-aX-XA5" secondAttribute="trailing" constant="8" id="0dI-P7-iHk"/>
+                        <constraint firstItem="5fO-aX-XA5" firstAttribute="top" secondItem="8VJ-Oh-Mvt" secondAttribute="top" constant="9" id="Ea8-xY-AFP"/>
+                        <constraint firstItem="5fO-aX-XA5" firstAttribute="leading" secondItem="8VJ-Oh-Mvt" secondAttribute="leading" constant="8" id="UMK-a3-dq0"/>
+                        <constraint firstAttribute="bottom" secondItem="5fO-aX-XA5" secondAttribute="bottom" constant="8" id="kzI-eq-WyD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nzO-NR-aeo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="76q-Oh-Bih"/>
+                <constraint firstAttribute="trailing" secondItem="nzO-NR-aeo" secondAttribute="trailing" id="H49-T6-orI"/>
+                <constraint firstAttribute="trailing" secondItem="8VJ-Oh-Mvt" secondAttribute="trailing" id="Rc6-fb-l8v"/>
+                <constraint firstItem="8VJ-Oh-Mvt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VLA-oG-rrS"/>
+                <constraint firstAttribute="bottom" secondItem="8VJ-Oh-Mvt" secondAttribute="bottom" id="uea-8Y-x0j"/>
+                <constraint firstItem="nzO-NR-aeo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zq1-Uk-1LV"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="380.5" y="233.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="current_location_icon.png" width="128" height="128"/>
+    </resources>
+</document>
