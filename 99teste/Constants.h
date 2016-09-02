@@ -7,6 +7,7 @@
 //
 
 
-#define urlCreateNewUsuario @"http://ec2-54-88-12-34.compute-1.amazonaws.com/v1/users"
-#define urlRequestNewRide   @"http://ec2-54-88-12-34.compute-1.amazonaws.com/v1/ride"
-#define urlDriversLocation  @"https://api.99taxis.com/lastLocations?sw=-23.612474,-46.702746&ne="
+#define urlCreateNewUsuario     @"http://ec2-54-88-12-34.compute-1.amazonaws.com/v1/users"
+#define urlRequestNewRide       @"http://ec2-54-88-12-34.compute-1.amazonaws.com/v1/ride"
+#define urlDriversLocation      @"https://api.99taxis.com/lastLocations?sw=-23.612474,-46.702746&ne="
+#define urlGetCoordsByAddress   @"http://maps.google.com/maps/api/geocode/json?sensor=false&address="

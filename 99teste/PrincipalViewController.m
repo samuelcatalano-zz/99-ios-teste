@@ -18,6 +18,7 @@
 {
     CGFloat txtLatitude;
     CGFloat txtLongitude;
+    UITextField *rideLocation;
 }
 
 @end
@@ -135,7 +136,7 @@
             msgTitle = [msgTitle stringByAppendingString:[idRide stringValue]];
             NSString *msg = (NSString*) responseObject[@"msg"];
             
-            [self showUIMessage:msg msgTitle:msgTitle];
+            [self askRideLocation:msg msgTitle:msgTitle];
         }
         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
         {
@@ -225,6 +226,28 @@
     [alertController addAction:ok];
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
+- (void)askRideLocation:(NSString *)msg msgTitle:(NSString *)msgTitle {
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Location"
+    message: @"Where should I get you?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Ex: Av. Paulista, 200, São Paulo";
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"CONFIRM" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray * textfields = alertController.textFields;
+        UITextField *namefield = textfields[0];
+        NSString *driverMsg = [msg stringByAppendingString:@" to "];
+        driverMsg = [driverMsg stringByAppendingString:namefield.text];
+        
+        [self showUIMessage:driverMsg msgTitle:msgTitle];
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
